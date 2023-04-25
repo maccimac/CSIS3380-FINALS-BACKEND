@@ -55,13 +55,7 @@ app.get('/:id', function(req, res) {
 
 // // Create a new book
 app.post('/', function(req, res) {
-  const book = new Book({
-    title: "This is a Book Title",
-    author: "Anne Author",
-   description: "Lorem ipsum dolor sit amet"
-  });
-    // const book = new Book(req.body)
-
+  const book = new Book(req.body)
   book.save(function(err) {
     if (err) throw err;
     res.send('Book created.');
